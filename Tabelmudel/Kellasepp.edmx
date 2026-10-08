@@ -1,0 +1,947 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Kellasepp.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="KellaseppStoreContainer">
+    <EntitySet Name="KlientSet" EntityType="Kellasepp.Store.KlientSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Too_kategooriaSet" EntityType="Kellasepp.Store.Too_kategooriaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TootajaSet" EntityType="Kellasepp.Store.TootajaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AmetikohtSet" EntityType="Kellasepp.Store.AmetikohtSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="VaruosaSet" EntityType="Kellasepp.Store.VaruosaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TarnijaSet" EntityType="Kellasepp.Store.TarnijaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="KellSet" EntityType="Kellasepp.Store.KellSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TooSet" EntityType="Kellasepp.Store.TooSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="RemontSet" EntityType="Kellasepp.Store.RemontSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ArveSet" EntityType="Kellasepp.Store.ArveSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Remont_TootajaSet" EntityType="Kellasepp.Store.Remont_TootajaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Remont_TooSet" EntityType="Kellasepp.Store.Remont_TooSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Remont_VaruosaSet" EntityType="Kellasepp.Store.Remont_VaruosaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tootaja_AmetikohtSet" EntityType="Kellasepp.Store.Tootaja_AmetikohtSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tarnija_VaruosaSet" EntityType="Kellasepp.Store.Tarnija_VaruosaSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="KlientKell" Association="Kellasepp.Store.KlientKell">
+      <End Role="Klient" EntitySet="KlientSet" />
+      <End Role="Kell" EntitySet="KellSet" />
+    </AssociationSet>
+    <AssociationSet Name="TooToo_kategooria" Association="Kellasepp.Store.TooToo_kategooria">
+      <End Role="Too" EntitySet="TooSet" />
+      <End Role="Too_kategooria" EntitySet="Too_kategooriaSet" />
+    </AssociationSet>
+    <AssociationSet Name="KellRemont" Association="Kellasepp.Store.KellRemont">
+      <End Role="Kell" EntitySet="KellSet" />
+      <End Role="Remont" EntitySet="RemontSet" />
+    </AssociationSet>
+    <AssociationSet Name="RemontArve" Association="Kellasepp.Store.RemontArve">
+      <End Role="Remont" EntitySet="RemontSet" />
+      <End Role="Arve" EntitySet="ArveSet" />
+    </AssociationSet>
+    <AssociationSet Name="RemontRemont_Tootaja" Association="Kellasepp.Store.RemontRemont_Tootaja">
+      <End Role="Remont" EntitySet="RemontSet" />
+      <End Role="Remont_Tootaja" EntitySet="Remont_TootajaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TootajaRemont_Tootaja" Association="Kellasepp.Store.TootajaRemont_Tootaja">
+      <End Role="Tootaja" EntitySet="TootajaSet" />
+      <End Role="Remont_Tootaja" EntitySet="Remont_TootajaSet" />
+    </AssociationSet>
+    <AssociationSet Name="RemontRemont_Too" Association="Kellasepp.Store.RemontRemont_Too">
+      <End Role="Remont" EntitySet="RemontSet" />
+      <End Role="Remont_Too" EntitySet="Remont_TooSet" />
+    </AssociationSet>
+    <AssociationSet Name="TooRemont_Too" Association="Kellasepp.Store.TooRemont_Too">
+      <End Role="Too" EntitySet="TooSet" />
+      <End Role="Remont_Too" EntitySet="Remont_TooSet" />
+    </AssociationSet>
+    <AssociationSet Name="RemontRemont_Varuosa" Association="Kellasepp.Store.RemontRemont_Varuosa">
+      <End Role="Remont" EntitySet="RemontSet" />
+      <End Role="Remont_Varuosa" EntitySet="Remont_VaruosaSet" />
+    </AssociationSet>
+    <AssociationSet Name="VaruosaRemont_Varuosa" Association="Kellasepp.Store.VaruosaRemont_Varuosa">
+      <End Role="Varuosa" EntitySet="VaruosaSet" />
+      <End Role="Remont_Varuosa" EntitySet="Remont_VaruosaSet" />
+    </AssociationSet>
+    <AssociationSet Name="TootajaTootaja_Ametikoht" Association="Kellasepp.Store.TootajaTootaja_Ametikoht">
+      <End Role="Tootaja" EntitySet="TootajaSet" />
+      <End Role="Tootaja_Ametikoht" EntitySet="Tootaja_AmetikohtSet" />
+    </AssociationSet>
+    <AssociationSet Name="AmetikohtTootaja_Ametikoht" Association="Kellasepp.Store.AmetikohtTootaja_Ametikoht">
+      <End Role="Ametikoht" EntitySet="AmetikohtSet" />
+      <End Role="Tootaja_Ametikoht" EntitySet="Tootaja_AmetikohtSet" />
+    </AssociationSet>
+    <AssociationSet Name="TarnijaTarnija_Varuosa" Association="Kellasepp.Store.TarnijaTarnija_Varuosa">
+      <End Role="Tarnija" EntitySet="TarnijaSet" />
+      <End Role="Tarnija_Varuosa" EntitySet="Tarnija_VaruosaSet" />
+    </AssociationSet>
+    <AssociationSet Name="VaruosaTarnija_Varuosa" Association="Kellasepp.Store.VaruosaTarnija_Varuosa">
+      <End Role="Varuosa" EntitySet="VaruosaSet" />
+      <End Role="Tarnija_Varuosa" EntitySet="Tarnija_VaruosaSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="KlientSet">
+    <Key>
+      <PropertyRef Name="klient_id" />
+    </Key>
+    <Property Name="klient_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimi" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="telefon" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Too_kategooriaSet">
+    <Key>
+      <PropertyRef Name="kategooria_id" />
+    </Key>
+    <Property Name="kategooria_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimetus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Too_too_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TootajaSet">
+    <Key>
+      <PropertyRef Name="tootaja_id" />
+    </Key>
+    <Property Name="tootaja_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimi" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AmetikohtSet">
+    <Key>
+      <PropertyRef Name="ametikoht_id" />
+    </Key>
+    <Property Name="ametikoht_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimetus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VaruosaSet">
+    <Key>
+      <PropertyRef Name="varuosa_id" />
+    </Key>
+    <Property Name="varuosa_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimetus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="tootja" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hind" Type="decimal" Nullable="false" />
+    <Property Name="laoseis" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TarnijaSet">
+    <Key>
+      <PropertyRef Name="tarnija_id" />
+    </Key>
+    <Property Name="tarnija_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimi" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KellSet">
+    <Key>
+      <PropertyRef Name="kell_id" />
+    </Key>
+    <Property Name="kell_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tootja" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mudel" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="seerianumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="kellatuup" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="valmistamisaasta" Type="int" Nullable="false" />
+    <Property Name="Klient_klient_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TooSet">
+    <Key>
+      <PropertyRef Name="too_id" />
+    </Key>
+    <Property Name="too_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nimetus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hind" Type="decimal" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RemontSet">
+    <Key>
+      <PropertyRef Name="remont_id" />
+    </Key>
+    <Property Name="remont_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kuupaev" Type="datetime" Nullable="false" />
+    <Property Name="Kell_kell_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ArveSet">
+    <Key>
+      <PropertyRef Name="arve_id" />
+    </Key>
+    <Property Name="arve_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="too_summa" Type="decimal" Nullable="false" />
+    <Property Name="varuosade_summa" Type="decimal" Nullable="false" />
+    <Property Name="kokku_summa" Type="decimal" Nullable="false" />
+    <Property Name="makse_staatus" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Remont_remont_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Remont_TootajaSet">
+    <Key>
+      <PropertyRef Name="Remont_remont_id" />
+      <PropertyRef Name="Tootaja_tootaja_id" />
+    </Key>
+    <Property Name="Remont_remont_id" Type="int" Nullable="false" />
+    <Property Name="Tootaja_tootaja_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Remont_TooSet">
+    <Key>
+      <PropertyRef Name="Remont_remont_id" />
+      <PropertyRef Name="Too_too_id" />
+    </Key>
+    <Property Name="Remont_remont_id" Type="int" Nullable="false" />
+    <Property Name="Too_too_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Remont_VaruosaSet">
+    <Key>
+      <PropertyRef Name="Remont_remont_id" />
+      <PropertyRef Name="Varuosa_varuosa_id" />
+    </Key>
+    <Property Name="Remont_remont_id" Type="int" Nullable="false" />
+    <Property Name="Varuosa_varuosa_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tootaja_AmetikohtSet">
+    <Key>
+      <PropertyRef Name="Tootaja_tootaja_id" />
+      <PropertyRef Name="Ametikoht_ametikoht_id" />
+    </Key>
+    <Property Name="alguskuupaev" Type="datetime" Nullable="false" />
+    <Property Name="loppkuupaev" Type="datetime" Nullable="false" />
+    <Property Name="Tootaja_tootaja_id" Type="int" Nullable="false" />
+    <Property Name="Ametikoht_ametikoht_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarnija_VaruosaSet">
+    <Key>
+      <PropertyRef Name="Tarnija_tarnija_id" />
+      <PropertyRef Name="Varuosa_varuosa_id" />
+    </Key>
+    <Property Name="pakutav_hind" Type="decimal" Nullable="false" />
+    <Property Name="Tarnija_tarnija_id" Type="int" Nullable="false" />
+    <Property Name="Varuosa_varuosa_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="KlientKell">
+    <End Role="Klient" Type="Kellasepp.Store.KlientSet" Multiplicity="1" />
+    <End Role="Kell" Type="Kellasepp.Store.KellSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Klient">
+        <PropertyRef Name="klient_id" />
+      </Principal>
+      <Dependent Role="Kell">
+        <PropertyRef Name="Klient_klient_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TooToo_kategooria">
+    <End Role="Too" Type="Kellasepp.Store.TooSet" Multiplicity="1" />
+    <End Role="Too_kategooria" Type="Kellasepp.Store.Too_kategooriaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Too">
+        <PropertyRef Name="too_id" />
+      </Principal>
+      <Dependent Role="Too_kategooria">
+        <PropertyRef Name="Too_too_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KellRemont">
+    <End Role="Kell" Type="Kellasepp.Store.KellSet" Multiplicity="1" />
+    <End Role="Remont" Type="Kellasepp.Store.RemontSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kell">
+        <PropertyRef Name="kell_id" />
+      </Principal>
+      <Dependent Role="Remont">
+        <PropertyRef Name="Kell_kell_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RemontArve">
+    <End Role="Remont" Type="Kellasepp.Store.RemontSet" Multiplicity="1" />
+    <End Role="Arve" Type="Kellasepp.Store.ArveSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remont">
+        <PropertyRef Name="remont_id" />
+      </Principal>
+      <Dependent Role="Arve">
+        <PropertyRef Name="Remont_remont_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RemontRemont_Tootaja">
+    <End Role="Remont" Type="Kellasepp.Store.RemontSet" Multiplicity="1" />
+    <End Role="Remont_Tootaja" Type="Kellasepp.Store.Remont_TootajaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remont">
+        <PropertyRef Name="remont_id" />
+      </Principal>
+      <Dependent Role="Remont_Tootaja">
+        <PropertyRef Name="Remont_remont_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TootajaRemont_Tootaja">
+    <End Role="Tootaja" Type="Kellasepp.Store.TootajaSet" Multiplicity="1" />
+    <End Role="Remont_Tootaja" Type="Kellasepp.Store.Remont_TootajaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tootaja">
+        <PropertyRef Name="tootaja_id" />
+      </Principal>
+      <Dependent Role="Remont_Tootaja">
+        <PropertyRef Name="Tootaja_tootaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RemontRemont_Too">
+    <End Role="Remont" Type="Kellasepp.Store.RemontSet" Multiplicity="1" />
+    <End Role="Remont_Too" Type="Kellasepp.Store.Remont_TooSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remont">
+        <PropertyRef Name="remont_id" />
+      </Principal>
+      <Dependent Role="Remont_Too">
+        <PropertyRef Name="Remont_remont_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TooRemont_Too">
+    <End Role="Too" Type="Kellasepp.Store.TooSet" Multiplicity="1" />
+    <End Role="Remont_Too" Type="Kellasepp.Store.Remont_TooSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Too">
+        <PropertyRef Name="too_id" />
+      </Principal>
+      <Dependent Role="Remont_Too">
+        <PropertyRef Name="Too_too_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RemontRemont_Varuosa">
+    <End Role="Remont" Type="Kellasepp.Store.RemontSet" Multiplicity="1" />
+    <End Role="Remont_Varuosa" Type="Kellasepp.Store.Remont_VaruosaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Remont">
+        <PropertyRef Name="remont_id" />
+      </Principal>
+      <Dependent Role="Remont_Varuosa">
+        <PropertyRef Name="Remont_remont_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VaruosaRemont_Varuosa">
+    <End Role="Varuosa" Type="Kellasepp.Store.VaruosaSet" Multiplicity="1" />
+    <End Role="Remont_Varuosa" Type="Kellasepp.Store.Remont_VaruosaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Varuosa">
+        <PropertyRef Name="varuosa_id" />
+      </Principal>
+      <Dependent Role="Remont_Varuosa">
+        <PropertyRef Name="Varuosa_varuosa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TootajaTootaja_Ametikoht">
+    <End Role="Tootaja" Type="Kellasepp.Store.TootajaSet" Multiplicity="1" />
+    <End Role="Tootaja_Ametikoht" Type="Kellasepp.Store.Tootaja_AmetikohtSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tootaja">
+        <PropertyRef Name="tootaja_id" />
+      </Principal>
+      <Dependent Role="Tootaja_Ametikoht">
+        <PropertyRef Name="Tootaja_tootaja_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AmetikohtTootaja_Ametikoht">
+    <End Role="Ametikoht" Type="Kellasepp.Store.AmetikohtSet" Multiplicity="1" />
+    <End Role="Tootaja_Ametikoht" Type="Kellasepp.Store.Tootaja_AmetikohtSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ametikoht">
+        <PropertyRef Name="ametikoht_id" />
+      </Principal>
+      <Dependent Role="Tootaja_Ametikoht">
+        <PropertyRef Name="Ametikoht_ametikoht_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TarnijaTarnija_Varuosa">
+    <End Role="Tarnija" Type="Kellasepp.Store.TarnijaSet" Multiplicity="1" />
+    <End Role="Tarnija_Varuosa" Type="Kellasepp.Store.Tarnija_VaruosaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarnija">
+        <PropertyRef Name="tarnija_id" />
+      </Principal>
+      <Dependent Role="Tarnija_Varuosa">
+        <PropertyRef Name="Tarnija_tarnija_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="VaruosaTarnija_Varuosa">
+    <End Role="Varuosa" Type="Kellasepp.Store.VaruosaSet" Multiplicity="1" />
+    <End Role="Tarnija_Varuosa" Type="Kellasepp.Store.Tarnija_VaruosaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Varuosa">
+        <PropertyRef Name="varuosa_id" />
+      </Principal>
+      <Dependent Role="Tarnija_Varuosa">
+        <PropertyRef Name="Varuosa_varuosa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Kellasepp" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="KellaseppContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="KlientSet" EntityType="Kellasepp.Klient" />
+          <EntitySet Name="Too_kategooriaSet" EntityType="Kellasepp.Too_kategooria" />
+          <EntitySet Name="TootajaSet" EntityType="Kellasepp.Tootaja" />
+          <EntitySet Name="AmetikohtSet" EntityType="Kellasepp.Ametikoht" />
+          <EntitySet Name="VaruosaSet" EntityType="Kellasepp.Varuosa" />
+          <EntitySet Name="TarnijaSet" EntityType="Kellasepp.Tarnija" />
+          <EntitySet Name="KellSet" EntityType="Kellasepp.Kell" />
+          <AssociationSet Name="KlientKell" Association="Kellasepp.KlientKell">
+            <End Role="Klient" EntitySet="KlientSet" />
+            <End Role="Kell" EntitySet="KellSet" />
+          </AssociationSet>
+          <EntitySet Name="TooSet" EntityType="Kellasepp.Too" />
+          <AssociationSet Name="TooToo_kategooria" Association="Kellasepp.TooToo_kategooria">
+            <End Role="Too" EntitySet="TooSet" />
+            <End Role="Too_kategooria" EntitySet="Too_kategooriaSet" />
+          </AssociationSet>
+          <EntitySet Name="RemontSet" EntityType="Kellasepp.Remont" />
+          <AssociationSet Name="KellRemont" Association="Kellasepp.KellRemont">
+            <End Role="Kell" EntitySet="KellSet" />
+            <End Role="Remont" EntitySet="RemontSet" />
+          </AssociationSet>
+          <EntitySet Name="ArveSet" EntityType="Kellasepp.Arve" />
+          <AssociationSet Name="RemontArve" Association="Kellasepp.RemontArve">
+            <End Role="Remont" EntitySet="RemontSet" />
+            <End Role="Arve" EntitySet="ArveSet" />
+          </AssociationSet>
+          <EntitySet Name="Remont_TootajaSet" EntityType="Kellasepp.Remont_Tootaja" />
+          <AssociationSet Name="RemontRemont_Tootaja" Association="Kellasepp.RemontRemont_Tootaja">
+            <End Role="Remont" EntitySet="RemontSet" />
+            <End Role="Remont_Tootaja" EntitySet="Remont_TootajaSet" />
+          </AssociationSet>
+          <AssociationSet Name="TootajaRemont_Tootaja" Association="Kellasepp.TootajaRemont_Tootaja">
+            <End Role="Tootaja" EntitySet="TootajaSet" />
+            <End Role="Remont_Tootaja" EntitySet="Remont_TootajaSet" />
+          </AssociationSet>
+          <EntitySet Name="Remont_TooSet" EntityType="Kellasepp.Remont_Too" />
+          <AssociationSet Name="RemontRemont_Too" Association="Kellasepp.RemontRemont_Too">
+            <End Role="Remont" EntitySet="RemontSet" />
+            <End Role="Remont_Too" EntitySet="Remont_TooSet" />
+          </AssociationSet>
+          <AssociationSet Name="TooRemont_Too" Association="Kellasepp.TooRemont_Too">
+            <End Role="Too" EntitySet="TooSet" />
+            <End Role="Remont_Too" EntitySet="Remont_TooSet" />
+          </AssociationSet>
+          <EntitySet Name="Remont_VaruosaSet" EntityType="Kellasepp.Remont_Varuosa" />
+          <AssociationSet Name="RemontRemont_Varuosa" Association="Kellasepp.RemontRemont_Varuosa">
+            <End Role="Remont" EntitySet="RemontSet" />
+            <End Role="Remont_Varuosa" EntitySet="Remont_VaruosaSet" />
+          </AssociationSet>
+          <AssociationSet Name="VaruosaRemont_Varuosa" Association="Kellasepp.VaruosaRemont_Varuosa">
+            <End Role="Varuosa" EntitySet="VaruosaSet" />
+            <End Role="Remont_Varuosa" EntitySet="Remont_VaruosaSet" />
+          </AssociationSet>
+          <EntitySet Name="Tootaja_AmetikohtSet" EntityType="Kellasepp.Tootaja_Ametikoht" />
+          <AssociationSet Name="TootajaTootaja_Ametikoht" Association="Kellasepp.TootajaTootaja_Ametikoht">
+            <End Role="Tootaja" EntitySet="TootajaSet" />
+            <End Role="Tootaja_Ametikoht" EntitySet="Tootaja_AmetikohtSet" />
+          </AssociationSet>
+          <AssociationSet Name="AmetikohtTootaja_Ametikoht" Association="Kellasepp.AmetikohtTootaja_Ametikoht">
+            <End Role="Ametikoht" EntitySet="AmetikohtSet" />
+            <End Role="Tootaja_Ametikoht" EntitySet="Tootaja_AmetikohtSet" />
+          </AssociationSet>
+          <EntitySet Name="Tarnija_VaruosaSet" EntityType="Kellasepp.Tarnija_Varuosa" />
+          <AssociationSet Name="TarnijaTarnija_Varuosa" Association="Kellasepp.TarnijaTarnija_Varuosa">
+            <End Role="Tarnija" EntitySet="TarnijaSet" />
+            <End Role="Tarnija_Varuosa" EntitySet="Tarnija_VaruosaSet" />
+          </AssociationSet>
+          <AssociationSet Name="VaruosaTarnija_Varuosa" Association="Kellasepp.VaruosaTarnija_Varuosa">
+            <End Role="Varuosa" EntitySet="VaruosaSet" />
+            <End Role="Tarnija_Varuosa" EntitySet="Tarnija_VaruosaSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Klient">
+          <Key>
+            <PropertyRef Name="klient_id" />
+          </Key>
+          <Property Name="klient_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimi" Type="String" Nullable="false" />
+          <Property Name="telefon" Type="String" Nullable="false" />
+          <NavigationProperty Name="Kell" Relationship="Kellasepp.KlientKell" FromRole="Klient" ToRole="Kell" />
+        </EntityType>
+        <EntityType Name="Too_kategooria">
+          <Key>
+            <PropertyRef Name="kategooria_id" />
+          </Key>
+          <Property Name="kategooria_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimetus" Type="String" Nullable="false" />
+          <NavigationProperty Name="Too" Relationship="Kellasepp.TooToo_kategooria" FromRole="Too_kategooria" ToRole="Too" />
+          <Property Name="Too_too_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tootaja">
+          <Key>
+            <PropertyRef Name="tootaja_id" />
+          </Key>
+          <Property Name="tootaja_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimi" Type="String" Nullable="false" />
+          <NavigationProperty Name="Remont_Tootaja" Relationship="Kellasepp.TootajaRemont_Tootaja" FromRole="Tootaja" ToRole="Remont_Tootaja" />
+          <NavigationProperty Name="Tootaja_Ametikoht" Relationship="Kellasepp.TootajaTootaja_Ametikoht" FromRole="Tootaja" ToRole="Tootaja_Ametikoht" />
+        </EntityType>
+        <EntityType Name="Ametikoht">
+          <Key>
+            <PropertyRef Name="ametikoht_id" />
+          </Key>
+          <Property Name="ametikoht_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimetus" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tootaja_Ametikoht" Relationship="Kellasepp.AmetikohtTootaja_Ametikoht" FromRole="Ametikoht" ToRole="Tootaja_Ametikoht" />
+        </EntityType>
+        <EntityType Name="Varuosa">
+          <Key>
+            <PropertyRef Name="varuosa_id" />
+          </Key>
+          <Property Name="varuosa_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimetus" Type="String" Nullable="false" />
+          <Property Name="tootja" Type="String" Nullable="false" />
+          <Property Name="hind" Type="Decimal" Nullable="false" />
+          <Property Name="laoseis" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Remont_Varuosa" Relationship="Kellasepp.VaruosaRemont_Varuosa" FromRole="Varuosa" ToRole="Remont_Varuosa" />
+          <NavigationProperty Name="Tarnija_Varuosa" Relationship="Kellasepp.VaruosaTarnija_Varuosa" FromRole="Varuosa" ToRole="Tarnija_Varuosa" />
+        </EntityType>
+        <EntityType Name="Tarnija">
+          <Key>
+            <PropertyRef Name="tarnija_id" />
+          </Key>
+          <Property Name="tarnija_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimi" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tarnija_Varuosa" Relationship="Kellasepp.TarnijaTarnija_Varuosa" FromRole="Tarnija" ToRole="Tarnija_Varuosa" />
+        </EntityType>
+        <EntityType Name="Kell">
+          <Key>
+            <PropertyRef Name="kell_id" />
+          </Key>
+          <Property Name="kell_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tootja" Type="String" Nullable="false" />
+          <Property Name="mudel" Type="String" Nullable="false" />
+          <Property Name="seerianumber" Type="String" Nullable="false" />
+          <Property Name="kellatuup" Type="String" Nullable="false" />
+          <Property Name="valmistamisaasta" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Klient" Relationship="Kellasepp.KlientKell" FromRole="Kell" ToRole="Klient" />
+          <Property Name="Klient_klient_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Remont" Relationship="Kellasepp.KellRemont" FromRole="Kell" ToRole="Remont" />
+        </EntityType>
+        <Association Name="KlientKell">
+          <End Type="Kellasepp.Klient" Role="Klient" Multiplicity="1" />
+          <End Type="Kellasepp.Kell" Role="Kell" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Klient">
+              <PropertyRef Name="klient_id" />
+            </Principal>
+            <Dependent Role="Kell">
+              <PropertyRef Name="Klient_klient_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Too">
+          <Key>
+            <PropertyRef Name="too_id" />
+          </Key>
+          <Property Name="too_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nimetus" Type="String" Nullable="false" />
+          <Property Name="hind" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Too_kategooria" Relationship="Kellasepp.TooToo_kategooria" FromRole="Too" ToRole="Too_kategooria" />
+          <NavigationProperty Name="Remont_Too" Relationship="Kellasepp.TooRemont_Too" FromRole="Too" ToRole="Remont_Too" />
+        </EntityType>
+        <Association Name="TooToo_kategooria">
+          <End Type="Kellasepp.Too" Role="Too" Multiplicity="1" />
+          <End Type="Kellasepp.Too_kategooria" Role="Too_kategooria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Too">
+              <PropertyRef Name="too_id" />
+            </Principal>
+            <Dependent Role="Too_kategooria">
+              <PropertyRef Name="Too_too_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Remont">
+          <Key>
+            <PropertyRef Name="remont_id" />
+          </Key>
+          <Property Name="remont_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kuupaev" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Kell" Relationship="Kellasepp.KellRemont" FromRole="Remont" ToRole="Kell" />
+          <Property Name="Kell_kell_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Arve" Relationship="Kellasepp.RemontArve" FromRole="Remont" ToRole="Arve" />
+          <NavigationProperty Name="Remont_Tootaja" Relationship="Kellasepp.RemontRemont_Tootaja" FromRole="Remont" ToRole="Remont_Tootaja" />
+          <NavigationProperty Name="Remont_Too" Relationship="Kellasepp.RemontRemont_Too" FromRole="Remont" ToRole="Remont_Too" />
+          <NavigationProperty Name="Remont_Varuosa" Relationship="Kellasepp.RemontRemont_Varuosa" FromRole="Remont" ToRole="Remont_Varuosa" />
+        </EntityType>
+        <Association Name="KellRemont">
+          <End Type="Kellasepp.Kell" Role="Kell" Multiplicity="1" />
+          <End Type="Kellasepp.Remont" Role="Remont" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kell">
+              <PropertyRef Name="kell_id" />
+            </Principal>
+            <Dependent Role="Remont">
+              <PropertyRef Name="Kell_kell_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Arve">
+          <Key>
+            <PropertyRef Name="arve_id" />
+          </Key>
+          <Property Name="arve_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="too_summa" Type="Decimal" Nullable="false" />
+          <Property Name="varuosade_summa" Type="Decimal" Nullable="false" />
+          <Property Name="kokku_summa" Type="Decimal" Nullable="false" />
+          <Property Name="makse_staatus" Type="String" Nullable="false" />
+          <NavigationProperty Name="Remont" Relationship="Kellasepp.RemontArve" FromRole="Arve" ToRole="Remont" />
+          <Property Name="Remont_remont_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RemontArve">
+          <End Type="Kellasepp.Remont" Role="Remont" Multiplicity="1" />
+          <End Type="Kellasepp.Arve" Role="Arve" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remont">
+              <PropertyRef Name="remont_id" />
+            </Principal>
+            <Dependent Role="Arve">
+              <PropertyRef Name="Remont_remont_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Remont_Tootaja" >
+          <Key>
+            <PropertyRef Name="Remont_remont_id" />
+            <PropertyRef Name="Tootaja_tootaja_id" />
+          </Key>
+          <NavigationProperty Name="Remont" Relationship="Kellasepp.RemontRemont_Tootaja" FromRole="Remont_Tootaja" ToRole="Remont" />
+          <Property Name="Remont_remont_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tootaja" Relationship="Kellasepp.TootajaRemont_Tootaja" FromRole="Remont_Tootaja" ToRole="Tootaja" />
+          <Property Name="Tootaja_tootaja_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RemontRemont_Tootaja">
+          <End Type="Kellasepp.Remont" Role="Remont" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Tootaja" Role="Remont_Tootaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remont">
+              <PropertyRef Name="remont_id" />
+            </Principal>
+            <Dependent Role="Remont_Tootaja">
+              <PropertyRef Name="Remont_remont_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TootajaRemont_Tootaja">
+          <End Type="Kellasepp.Tootaja" Role="Tootaja" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Tootaja" Role="Remont_Tootaja" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tootaja">
+              <PropertyRef Name="tootaja_id" />
+            </Principal>
+            <Dependent Role="Remont_Tootaja">
+              <PropertyRef Name="Tootaja_tootaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Remont_Too" >
+          <Key>
+            <PropertyRef Name="Remont_remont_id" />
+            <PropertyRef Name="Too_too_id" />
+          </Key>
+          <NavigationProperty Name="Remont" Relationship="Kellasepp.RemontRemont_Too" FromRole="Remont_Too" ToRole="Remont" />
+          <Property Name="Remont_remont_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Too" Relationship="Kellasepp.TooRemont_Too" FromRole="Remont_Too" ToRole="Too" />
+          <Property Name="Too_too_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RemontRemont_Too">
+          <End Type="Kellasepp.Remont" Role="Remont" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Too" Role="Remont_Too" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remont">
+              <PropertyRef Name="remont_id" />
+            </Principal>
+            <Dependent Role="Remont_Too">
+              <PropertyRef Name="Remont_remont_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TooRemont_Too">
+          <End Type="Kellasepp.Too" Role="Too" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Too" Role="Remont_Too" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Too">
+              <PropertyRef Name="too_id" />
+            </Principal>
+            <Dependent Role="Remont_Too">
+              <PropertyRef Name="Too_too_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Remont_Varuosa" >
+          <Key>
+            <PropertyRef Name="Remont_remont_id" />
+            <PropertyRef Name="Varuosa_varuosa_id" />
+          </Key>
+          <NavigationProperty Name="Remont" Relationship="Kellasepp.RemontRemont_Varuosa" FromRole="Remont_Varuosa" ToRole="Remont" />
+          <Property Name="Remont_remont_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Varuosa" Relationship="Kellasepp.VaruosaRemont_Varuosa" FromRole="Remont_Varuosa" ToRole="Varuosa" />
+          <Property Name="Varuosa_varuosa_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="RemontRemont_Varuosa">
+          <End Type="Kellasepp.Remont" Role="Remont" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Varuosa" Role="Remont_Varuosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Remont">
+              <PropertyRef Name="remont_id" />
+            </Principal>
+            <Dependent Role="Remont_Varuosa">
+              <PropertyRef Name="Remont_remont_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VaruosaRemont_Varuosa">
+          <End Type="Kellasepp.Varuosa" Role="Varuosa" Multiplicity="1" />
+          <End Type="Kellasepp.Remont_Varuosa" Role="Remont_Varuosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varuosa">
+              <PropertyRef Name="varuosa_id" />
+            </Principal>
+            <Dependent Role="Remont_Varuosa">
+              <PropertyRef Name="Varuosa_varuosa_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tootaja_Ametikoht" >
+          <Key>
+            <PropertyRef Name="Tootaja_tootaja_id" />
+            <PropertyRef Name="Ametikoht_ametikoht_id" />
+          </Key>
+          <Property Name="alguskuupaev" Type="DateTime" Nullable="false" />
+          <Property Name="loppkuupaev" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Tootaja" Relationship="Kellasepp.TootajaTootaja_Ametikoht" FromRole="Tootaja_Ametikoht" ToRole="Tootaja" />
+          <Property Name="Tootaja_tootaja_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ametikoht" Relationship="Kellasepp.AmetikohtTootaja_Ametikoht" FromRole="Tootaja_Ametikoht" ToRole="Ametikoht" />
+          <Property Name="Ametikoht_ametikoht_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TootajaTootaja_Ametikoht">
+          <End Type="Kellasepp.Tootaja" Role="Tootaja" Multiplicity="1" />
+          <End Type="Kellasepp.Tootaja_Ametikoht" Role="Tootaja_Ametikoht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tootaja">
+              <PropertyRef Name="tootaja_id" />
+            </Principal>
+            <Dependent Role="Tootaja_Ametikoht">
+              <PropertyRef Name="Tootaja_tootaja_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AmetikohtTootaja_Ametikoht">
+          <End Type="Kellasepp.Ametikoht" Role="Ametikoht" Multiplicity="1" />
+          <End Type="Kellasepp.Tootaja_Ametikoht" Role="Tootaja_Ametikoht" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ametikoht">
+              <PropertyRef Name="ametikoht_id" />
+            </Principal>
+            <Dependent Role="Tootaja_Ametikoht">
+              <PropertyRef Name="Ametikoht_ametikoht_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Tarnija_Varuosa" >
+          <Key>
+            <PropertyRef Name="Tarnija_tarnija_id" />
+            <PropertyRef Name="Varuosa_varuosa_id" />
+          </Key>
+          <Property Name="pakutav_hind" Type="Decimal" Nullable="false" />
+          <NavigationProperty Name="Tarnija" Relationship="Kellasepp.TarnijaTarnija_Varuosa" FromRole="Tarnija_Varuosa" ToRole="Tarnija" />
+          <Property Name="Tarnija_tarnija_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Varuosa" Relationship="Kellasepp.VaruosaTarnija_Varuosa" FromRole="Tarnija_Varuosa" ToRole="Varuosa" />
+          <Property Name="Varuosa_varuosa_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="TarnijaTarnija_Varuosa">
+          <End Type="Kellasepp.Tarnija" Role="Tarnija" Multiplicity="1" />
+          <End Type="Kellasepp.Tarnija_Varuosa" Role="Tarnija_Varuosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tarnija">
+              <PropertyRef Name="tarnija_id" />
+            </Principal>
+            <Dependent Role="Tarnija_Varuosa">
+              <PropertyRef Name="Tarnija_tarnija_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VaruosaTarnija_Varuosa">
+          <End Type="Kellasepp.Varuosa" Role="Varuosa" Multiplicity="1" />
+          <End Type="Kellasepp.Tarnija_Varuosa" Role="Tarnija_Varuosa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Varuosa">
+              <PropertyRef Name="varuosa_id" />
+            </Principal>
+            <Dependent Role="Tarnija_Varuosa">
+              <PropertyRef Name="Varuosa_varuosa_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="KellaseppStoreContainer" CdmEntityContainer="KellaseppContainer">
+    <EntitySetMapping Name="KlientSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Klient)">
+        <MappingFragment StoreEntitySet="KlientSet">
+          <ScalarProperty Name="klient_id" ColumnName="klient_id" />
+          <ScalarProperty Name="nimi" ColumnName="nimi" />
+          <ScalarProperty Name="telefon" ColumnName="telefon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Too_kategooriaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Too_kategooria)">
+        <MappingFragment StoreEntitySet="Too_kategooriaSet">
+          <ScalarProperty Name="kategooria_id" ColumnName="kategooria_id" />
+          <ScalarProperty Name="nimetus" ColumnName="nimetus" />
+          <ScalarProperty Name="Too_too_id" ColumnName="Too_too_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TootajaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Tootaja)">
+        <MappingFragment StoreEntitySet="TootajaSet">
+          <ScalarProperty Name="tootaja_id" ColumnName="tootaja_id" />
+          <ScalarProperty Name="nimi" ColumnName="nimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AmetikohtSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Ametikoht)">
+        <MappingFragment StoreEntitySet="AmetikohtSet">
+          <ScalarProperty Name="ametikoht_id" ColumnName="ametikoht_id" />
+          <ScalarProperty Name="nimetus" ColumnName="nimetus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VaruosaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Varuosa)">
+        <MappingFragment StoreEntitySet="VaruosaSet">
+          <ScalarProperty Name="varuosa_id" ColumnName="varuosa_id" />
+          <ScalarProperty Name="nimetus" ColumnName="nimetus" />
+          <ScalarProperty Name="tootja" ColumnName="tootja" />
+          <ScalarProperty Name="hind" ColumnName="hind" />
+          <ScalarProperty Name="laoseis" ColumnName="laoseis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TarnijaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Tarnija)">
+        <MappingFragment StoreEntitySet="TarnijaSet">
+          <ScalarProperty Name="tarnija_id" ColumnName="tarnija_id" />
+          <ScalarProperty Name="nimi" ColumnName="nimi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KellSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Kell)">
+        <MappingFragment StoreEntitySet="KellSet">
+          <ScalarProperty Name="kell_id" ColumnName="kell_id" />
+          <ScalarProperty Name="tootja" ColumnName="tootja" />
+          <ScalarProperty Name="mudel" ColumnName="mudel" />
+          <ScalarProperty Name="seerianumber" ColumnName="seerianumber" />
+          <ScalarProperty Name="kellatuup" ColumnName="kellatuup" />
+          <ScalarProperty Name="valmistamisaasta" ColumnName="valmistamisaasta" />
+          <ScalarProperty Name="Klient_klient_id" ColumnName="Klient_klient_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TooSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Too)">
+        <MappingFragment StoreEntitySet="TooSet">
+          <ScalarProperty Name="too_id" ColumnName="too_id" />
+          <ScalarProperty Name="nimetus" ColumnName="nimetus" />
+          <ScalarProperty Name="hind" ColumnName="hind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RemontSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Remont)">
+        <MappingFragment StoreEntitySet="RemontSet">
+          <ScalarProperty Name="remont_id" ColumnName="remont_id" />
+          <ScalarProperty Name="kuupaev" ColumnName="kuupaev" />
+          <ScalarProperty Name="Kell_kell_id" ColumnName="Kell_kell_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ArveSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Arve)">
+        <MappingFragment StoreEntitySet="ArveSet">
+          <ScalarProperty Name="arve_id" ColumnName="arve_id" />
+          <ScalarProperty Name="too_summa" ColumnName="too_summa" />
+          <ScalarProperty Name="varuosade_summa" ColumnName="varuosade_summa" />
+          <ScalarProperty Name="kokku_summa" ColumnName="kokku_summa" />
+          <ScalarProperty Name="makse_staatus" ColumnName="makse_staatus" />
+          <ScalarProperty Name="Remont_remont_id" ColumnName="Remont_remont_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remont_TootajaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Remont_Tootaja)">
+        <MappingFragment StoreEntitySet="Remont_TootajaSet">
+          <ScalarProperty Name="Remont_remont_id" ColumnName="Remont_remont_id" />
+          <ScalarProperty Name="Tootaja_tootaja_id" ColumnName="Tootaja_tootaja_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remont_TooSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Remont_Too)">
+        <MappingFragment StoreEntitySet="Remont_TooSet">
+          <ScalarProperty Name="Remont_remont_id" ColumnName="Remont_remont_id" />
+          <ScalarProperty Name="Too_too_id" ColumnName="Too_too_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Remont_VaruosaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Remont_Varuosa)">
+        <MappingFragment StoreEntitySet="Remont_VaruosaSet">
+          <ScalarProperty Name="Remont_remont_id" ColumnName="Remont_remont_id" />
+          <ScalarProperty Name="Varuosa_varuosa_id" ColumnName="Varuosa_varuosa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tootaja_AmetikohtSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Tootaja_Ametikoht)">
+        <MappingFragment StoreEntitySet="Tootaja_AmetikohtSet">
+          <ScalarProperty Name="Tootaja_tootaja_id" ColumnName="Tootaja_tootaja_id" />
+          <ScalarProperty Name="Ametikoht_ametikoht_id" ColumnName="Ametikoht_ametikoht_id" />
+          <ScalarProperty Name="alguskuupaev" ColumnName="alguskuupaev" />
+          <ScalarProperty Name="loppkuupaev" ColumnName="loppkuupaev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarnija_VaruosaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Kellasepp.Tarnija_Varuosa)">
+        <MappingFragment StoreEntitySet="Tarnija_VaruosaSet">
+          <ScalarProperty Name="Tarnija_tarnija_id" ColumnName="Tarnija_tarnija_id" />
+          <ScalarProperty Name="Varuosa_varuosa_id" ColumnName="Varuosa_varuosa_id" />
+          <ScalarProperty Name="pakutav_hind" ColumnName="pakutav_hind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
