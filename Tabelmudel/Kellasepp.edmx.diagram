@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b0fa9151ab7343ce8ffdb0e2b4b5ea1c" Name="Diagram1" ZoomLevel="81" >
+      <Diagram DiagramId="b0fa9151ab7343ce8ffdb0e2b4b5ea1c" Name="Diagram1" ZoomLevel="106" >
         <EntityTypeShape EntityType="Kellasepp.Klient" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="Kellasepp.Too_kategooria" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="Kellasepp.Tootaja" Width="1.5" PointX="0.75" PointY="3.75" />
@@ -31,7 +31,7 @@
         <EntityTypeShape EntityType="Kellasepp.Tootaja_Ametikoht" Width="1.5" PointX="0.75" PointY="9.75" />
         <AssociationConnector Association="Kellasepp.TootajaTootaja_Ametikoht" />
         <AssociationConnector Association="Kellasepp.AmetikohtTootaja_Ametikoht" />
-        <EntityTypeShape EntityType="Kellasepp.Tarnija_Varuosa" Width="1.5" PointX="9.625" PointY="3.75" />
+        <EntityTypeShape EntityType="Kellasepp.Tarnija_Varuosa" Width="1.5" PointX="9.875" PointY="3.875" />
         <AssociationConnector Association="Kellasepp.TarnijaTarnija_Varuosa" />
         <AssociationConnector Association="Kellasepp.VaruosaTarnija_Varuosa" />
       </Diagram>

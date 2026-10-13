@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/08/2026 12:59:03
+-- Date Created: 10/13/2026 08:58:13
 -- Generated from EDMX file: C:\Users\opilane\source\repos\Tabelmudel\Tabelmudel\Kellasepp.edmx
 -- --------------------------------------------------
 
