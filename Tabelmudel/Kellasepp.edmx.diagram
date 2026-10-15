@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b0fa9151ab7343ce8ffdb0e2b4b5ea1c" Name="Diagram1" ZoomLevel="106" >
+      <Diagram DiagramId="b0fa9151ab7343ce8ffdb0e2b4b5ea1c" Name="Diagram1" ZoomLevel="59" >
         <EntityTypeShape EntityType="Kellasepp.Klient" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="Kellasepp.Too_kategooria" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="Kellasepp.Tootaja" Width="1.5" PointX="0.75" PointY="3.75" />
