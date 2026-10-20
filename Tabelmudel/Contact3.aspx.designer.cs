@@ -11,7 +11,7 @@ namespace Tabelmudel
 {
 
 
-    public partial class Contact
+    public partial class Contact3
     {
 
         /// <summary>
